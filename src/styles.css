@@ -34,6 +34,7 @@ body.dark {
   margin: 35px;
   padding: 25px;
   max-width: 978px;
+  min-width: 800px;
   border-radius: 500px;
   border-width: 10px 4px;
   outline: ridge grey;
@@ -152,29 +153,6 @@ h4 {
 
 p {
   text-align: center;
-}
-
-img.linkedin-logo {
-  display: inline-block;
-  margin: 10px;
-  max-width: 25px;
-  padding: 0px;
-  border-radius: 50px;
-}
-
-img.shecodes-logo {
-  display: inline-block;
-  margin: 10px;
-  max-width: 25px;
-  padding: 0px;
-  border-radius: 50px;
-}
-
-li.coder-connects {
-  display: inline;
-  padding: 0;
-  margin: 0 auto;
-  text-decoration: none;
 }
 
 ul {
