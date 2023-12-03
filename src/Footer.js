@@ -5,8 +5,10 @@ export default function Footer() {
   return (
     <div>
       <p>
-        <a href="https://github.com/Astar05/Weather-App">Open-source code</a> by
-        Nhu Huynh
+        <a href="https://github.com/Astar05/react-weather-app">
+          Open-source code
+        </a>{" "}
+        by Nhu Huynh
       </p>
 
       <ul>
