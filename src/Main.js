@@ -1,7 +1,15 @@
 import React from "react";
+import axios from "axios";
 import "./styles.css";
 
 export default function Main() {
+  fucntion handleResponse(response) {
+    console.log(response.data);
+  }
+  const apiKey = "c819171fe0abdc14039af4ef5dda283b";
+  let city = "Boston";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
   return (
     <div className="row row-cols-2">
       <div className="col-1" id="main">
