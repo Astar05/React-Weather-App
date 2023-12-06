@@ -8,8 +8,6 @@ import Main from "./Main";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 
-import "./Weather.css";
-
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
