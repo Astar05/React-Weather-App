@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
 import "./styles.css";
 
@@ -18,34 +19,7 @@ export default function Main(props) {
     });
   }
   if (weatherData.ready) {
-    return (
-      <div className="row row-cols-2">
-        <div className="col-1" id="main">
-          <span id="main-temp">{Math.round(weatherData.temperature)}</span>
-          <span id="main-degree">°F</span>
-        </div>
-        <div className="col-5" id="current">
-          <span id="current-info">
-            <span id="current-city"> {weatherData.city} </span>
-            <br />
-            <span id="time">
-              {" "}
-              As of {weatherData.date.getDay()} | 5:00 PM EST{" "}
-            </span>
-            <br />
-            <span id="weather"> {weatherData.description} </span>
-            <img
-              src={weatherData.iconUrl}
-              id="current-icon"
-              alt="weather icon"
-              className="weather-icon"
-            />
-            <br />
-            <span id="wind"> Wind: {Math.round(weatherData.wind)} mph </span>
-          </span>
-        </div>
-      </div>
-    );
+    return <WeatherInfo data={weatherData} />;
   } else {
     const apiKey = "c819171fe0abdc14039af4ef5dda283b";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`;
