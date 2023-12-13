@@ -37,7 +37,7 @@ export default function Main(props) {
             <img
               src={weatherData.iconUrl}
               id="current-icon"
-              alt="{WeatherData.description}"
+              alt="weather icon"
               className="weather-icon"
             />
             <br />
