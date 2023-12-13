@@ -1,33 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./styles.css";
 
-export default function Main() {
-  fucntion handleResponse(response) {
+export default function Main(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+
+  function handleResponse(response) {
     console.log(response.data);
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+      description: response.data.weather[0].description,
+      iconUrl: "",
+      date: new Date(response.data.dt * 1000),
+    });
   }
-  const apiKey = "c819171fe0abdc14039af4ef5dda283b";
-  let city = "Boston";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleResponse);
-  return (
-    <div className="row row-cols-2">
-      <div className="col-1" id="main">
-        <span id="main-temp">71</span>
-        <span id="main-degree">°F</span>
+  if (weatherData.ready) {
+    return (
+      <div className="row row-cols-2">
+        <div className="col-1" id="main">
+          <span id="main-temp">{Math.round(weatherData.temperature)}</span>
+          <span id="main-degree">°F</span>
+        </div>
+        <div className="col-5" id="current">
+          <span id="current-info">
+            <span id="current-city"> {weatherData.city} </span>
+            <br />
+            <span id="time">
+              {" "}
+              As of {weatherData.date.getDay()} | 5:00 PM EST{" "}
+            </span>
+            <br />
+            <span id="weather"> {weatherData.description} </span>
+            <img
+              src={weatherData.iconUrl}
+              id="current-icon"
+              alt="{WeatherData.description}"
+              className="weather-icon"
+            />
+            <br />
+            <span id="wind"> Wind: {Math.round(weatherData.wind)} mph </span>
+          </span>
+        </div>
       </div>
-      <div className="col-5" id="current">
-        <span id="current-info">
-          <span id="current-city"> Boston, MA </span>
-          <br />
-          <span id="time"> As of Tuesday | 5:00 PM EST </span>
-          <br />
-          <span id="weather"> Cloudy </span>
-          <img id="current-icon" alt="Weather Icon" className="weather-icon" />
-          <br />
-          <span id="wind"> Wind: 2 mph </span>
-        </span>
-      </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "c819171fe0abdc14039af4ef5dda283b";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return "Loading...";
+  }
 }

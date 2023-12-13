@@ -17,7 +17,7 @@ root.render(
     <div className="container">
       <WeatherVideo />
       <CitySearch />
-      <Main />
+      <Main defaultCity="Boston" />
 
       <Forecast />
     </div>
