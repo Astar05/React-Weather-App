@@ -39,7 +39,7 @@ export default function Main(props) {
     return (
       <div className="citySearch">
         <form onSubmit={handleSubmit}>
-          <div className="new-city-search" style={{ width: "25rem" }}>
+          <div className="new-city-search" style={{ width: "30rem" }}>
             <div className="row">
               <div className="col-9">
                 <input
@@ -52,7 +52,7 @@ export default function Main(props) {
                   id="search"
                 />
               </div>
-              <div className="col-3 d-flex align-items-center justify-content-end">
+              <div className="col-3 d-flex">
                 <div className="mr-2">
                   <button
                     className="btn btn-primary spaced"
@@ -60,15 +60,6 @@ export default function Main(props) {
                     value="Search"
                   >
                     Search
-                  </button>
-                </div>
-                <div>
-                  <button
-                    className="btn btn-success spaced"
-                    id="current-location"
-                    type="button"
-                  >
-                    Current
                   </button>
                 </div>
               </div>

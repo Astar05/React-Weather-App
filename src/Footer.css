@@ -22,6 +22,7 @@ li.coder-connects {
 }
 
 body {
-  max-width: 970px;
-  min-width: 800px;
+  max-width: 816px;
+  min-width: 816px;
+  display: block;
 }
