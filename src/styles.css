@@ -30,7 +30,7 @@ body.dark {
   padding: 25px;
   max-width: 816px;
   min-width: 816px;
-  border-radius: 500px;
+  border-radius: 100px;
   border-width: 10px 4px;
   outline: ridge grey;
   outline-width: 10px;
@@ -88,7 +88,7 @@ body {
   font-weight: bolder;
   color: black;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 canvas {
@@ -121,6 +121,10 @@ h4 {
   outline: groove grey;
   outline-width: 5px;
   border-radius: 100px;
+}
+
+#forecast {
+  text-align: center;
 }
 
 .col {
