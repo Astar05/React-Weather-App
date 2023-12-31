@@ -33,7 +33,7 @@ export default function Main(props) {
 
   function search() {
     const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -42,11 +42,13 @@ export default function Main(props) {
       <div className="citySearch">
         <form onSubmit={handleSubmit}>
           <div className="new-city-search" style={{ width: "30rem" }}>
-            <div className="row">
+            <div className="row align-items-center">
+              {" "}
+              {/* Updated class */}
               <div className="col-9">
                 <input
                   type="search"
-                  className="form-control style"
+                  className="form-control style mt-2"
                   placeholder="Type in new city search..."
                   aria-describedby="button-addon"
                   autoFocus="on"
@@ -55,12 +57,8 @@ export default function Main(props) {
                 />
               </div>
               <div className="col-3 d-flex">
-                <div className="mr-2">
-                  <button
-                    className="btn btn-primary spaced"
-                    type="submit"
-                    value="Search"
-                  >
+                <div className="mx-auto">
+                  <button className="searchButt" type="submit" value="Search">
                     Search
                   </button>
                 </div>
@@ -68,7 +66,9 @@ export default function Main(props) {
             </div>
           </div>
         </form>
+        <hr />
         <WeatherInfo data={weatherData} />
+        <hr />
         <Forecast coordinates={weatherData.coordinates} />
       </div>
     );

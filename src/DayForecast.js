@@ -13,12 +13,12 @@ export function DayForecast(props) {
 
   function maxTemp() {
     let temp = Math.round(props.data.temp.max);
-    return `${temp}°C `;
+    return `${temp}°F`;
   }
 
   function minTemp() {
     let temp = Math.round(props.data.temp.min);
-    return `${temp}°C `;
+    return `${temp}°F `;
   }
   return (
     <div>

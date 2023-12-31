@@ -1,29 +1,3 @@
-.theme-toggle-button {
-  background-color: #494949;
-  color: #fafafa;
-  border: none;
-  padding: 10px 15px;
-  margin: 10px auto;
-  cursor: pointer;
-  border-radius: 60px;
-  display: block;
-}
-
-.dark .theme-toggle-button {
-  color: #1d1716;
-  background-color: #dfdfdf;
-}
-
-body.dark {
-  background-color: #1d1716;
-  color: #fafafa;
-  text-shadow: -1px -1px 0 #494949, 1px -1px 0 #494949;
-}
-
-.dark #current-info {
-  color: #f2f4f7;
-}
-
 .container {
   display: block;
   margin: 35px;
@@ -36,36 +10,42 @@ body.dark {
   outline-width: 10px;
   position: relative;
   overflow: hidden;
+  background-color: #ffca7a;
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Chakra Petch", sans-serif;
   background-color: #f3f3f3;
   color: #333;
+  display: block;
 }
 
-.WeatherVideo {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: -1;
+.citySearch {
+  background-color: #aa633f;
+  border: solid;
+  border-radius: 11%;
+  padding: 10px 15px 10px 15px;
+  margin: 10px 10px;
+  outline-color: black;
 }
 
 .new-city-search {
-  display: block;
   margin: 0 auto;
-  padding: 10px 10px;
 }
 
 .spaced {
   margin-left: 10px;
 }
 
+.searchButt {
+  padding: 22px 12px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: bolder;
+  box-shadow: 3px 7px 3px;
+}
 #main {
-  margin: 15px 25px 0px 150px;
+  margin: 15px 30px 0px 80px;
   padding: 20px 170px 20px 15px;
   font-family: "Ubuntu Mono", monospace;
   font-size: 75px;
@@ -78,17 +58,25 @@ body {
   text-decoration: none;
 }
 
+#weather-main {
+  padding: 15px 15px 15px 15px;
+  margin: 0 auto;
+  border-radius: 11%;
+  background-color: #976849;
+  border: dashed;
+}
+
 #current {
   margin: 0px 25px 0px 0px;
-  padding: 25px 15px 0px 15px;
+  padding: 20px 15px 0px 15px;
 }
 
 #current-info {
-  font-family: "Poppins", sans-serif;
-  font-weight: bolder;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: bold;
   color: black;
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 canvas {
@@ -99,8 +87,8 @@ canvas {
 .forecast-container {
   display: block;
   margin: 20px auto;
-  padding: 25px 25px;
-  font-family: "Poppins", sans-serif;
+
+  font-family: "Chakra Petch", sans-serif;
 }
 
 #weather {
@@ -108,10 +96,9 @@ canvas {
 }
 
 h4 {
-  font-family: "Poppins", sans-serif;
-  text-align: left;
+  font-family: "Chakra Petch", sans-serif;
   margin: 10px auto;
-  padding: 0px 25px 0px 150px;
+  padding: 0px 25px 0px 90px;
   font-size: 20px;
 }
 
@@ -121,6 +108,8 @@ h4 {
   outline: groove grey;
   outline-width: 5px;
   border-radius: 100px;
+  background-color: #643f22;
+  color: #feaa27;
 }
 
 #forecast {

@@ -6,7 +6,7 @@ import "./styles.css";
 
 export default function WeatherInfo(props) {
   return (
-    <div className="row row-cols-2">
+    <div className="row row-cols-2" id="weather-main">
       <div className="col-1" id="main">
         <WeatherTemp celsius={props.data.temperature} />
       </div>
