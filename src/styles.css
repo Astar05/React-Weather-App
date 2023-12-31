@@ -1,3 +1,10 @@
+html {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .container {
   display: block;
   margin: 35px;
@@ -8,7 +15,6 @@
   border-width: 10px 4px;
   outline: ridge grey;
   outline-width: 10px;
-  position: relative;
   overflow: hidden;
   background-color: #ffca7a;
 }
@@ -52,10 +58,6 @@ body {
   border-radius: 40%;
   outline: solid black;
   background: rgba(203, 214, 204, 0.3);
-}
-
-#main-degree {
-  text-decoration: none;
 }
 
 #weather-main {
@@ -146,4 +148,9 @@ ul {
 
 a {
   text-decoration: none;
+  color: #333333;
+}
+
+a:hover {
+  color: #ffca7a;
 }
